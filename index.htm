@@ -9,8 +9,16 @@
       function handlerClick_Card(id) {
         // DOM Document Object Model del HTML
         let user = document.getElementById(id);
-        // TODO 1: usar querySelector en lugar de children
-        let contador = user.querySelector('.user-item__info h2:nth-child(2)');
+        //-------------------------------------------------------------------------------------------------------- 
+        // Usar querySelector en lugar de children: 
+        //EJ1: 
+        //let contador = user.children[0].children[0].children[1].children[1]; 
+        //Ej2: 
+        //let contador = user.querySelector("h2:nth-child(2)"); 
+        //let contador = user.querySelector('.user-item__info h2:nth-child(2)'); 
+
+        let contador = user.querySelectorAll("h2")[1];
+
         //alert(contador.innerHTML);
         contador.innerText = parseInt(contador.innerText) + 1;
         // TODO 2: quiero generar el comente usuario (li) de manera automatica con javascript
